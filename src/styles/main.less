@@ -1,0 +1,101 @@
+@import "mapas.less";
+@breakpointMobile: ~"(max-width: 767px)";
+@breakpointTablet: ~"(min-width: 768px) and (max-width: 1022px)";
+
+.marginbottom8 {
+  margin-bottom: 8px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+}
+
+body {
+  background-color: #colors[backgroundcolor];
+  color: #colors[textcolor];
+}
+
+li {
+  list-style: none;
+}
+
+.container {
+  max-width: 960px;
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  @media @breakpointTablet {
+    max-width: 80%;
+  }
+  @media @breakpointMobile {
+    max-width: 70%;
+  }
+}
+
+header {
+  padding: 24px;
+
+  .profile-avatar {
+    display: block;
+    margin: 0 auto 24px;
+    border-radius: 50%;
+    width: 150px;
+  }
+}
+
+.profile-bio {
+  text-align: center;
+  &-name {
+    font-size: 18px;
+    .marginbottom8();
+  }
+  &-subtitle {
+    font-size: 16px;
+    .marginbottom8();
+  }
+  &-description {
+    font-size: 12px;
+    opacity: 0.7;
+  }
+}
+
+.social-links {
+  display: flex;
+  justify-content: space-between;
+  max-width: 360px;
+  margin: 0 auto;
+  width: 100%;
+  li {
+    img {
+      &:hover {
+        transition: all ease 0.3s;
+        transform: scale(1.3);
+      }
+    }
+  }
+}
+.project-list {
+  margin-top: 32px;
+  &-item {
+    a {
+      text-decoration: none;
+      background-color: #colors[buttoncolor];
+      display: block;
+      padding: 16px 20px;
+      margin-bottom: 16px;
+      text-align: center;
+      color: #colors[textcolor];
+      font-weight: bold;
+      border-radius: 20px;
+      border: 2px solid #colors[buttoncolor];
+      transition: all ease .5s;
+      &:hover {
+        background-color: transparent;
+        color: #colors[buttoncolor];
+      }
+    }
+  }
+}
